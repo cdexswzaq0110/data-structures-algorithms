@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DSA Visual Forge</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true">DS</div>
+        <div>
+          <p class="eyebrow">Interactive data structures and algorithms</p>
+          <h1>DSA Visual Forge</h1>
+        </div>
+      </div>
+      <div class="status-strip" aria-live="polite">
+        <span id="stepCounter">Step 0 / 0</span>
+        <span id="complexityLabel">Choose an algorithm</span>
+        <button id="themeButton" class="ghost-button" type="button" aria-label="Toggle theme">深色</button>
+      </div>
+    </header>
+
+    <main class="app-shell">
+      <aside class="sidebar" aria-label="Algorithm catalog">
+        <label class="field-label" for="searchInput">Search</label>
+        <input id="searchInput" type="search" autocomplete="off" placeholder="Try red-black, heap, dijkstra">
+        <label class="field-label" for="categorySelect">Category</label>
+        <select id="categorySelect"></select>
+        <label class="field-label" for="algorithmSelect">Algorithm</label>
+        <select id="algorithmSelect"></select>
+        <div id="catalogMeta" class="catalog-meta"></div>
+        <div id="algorithmList" class="algorithm-list"></div>
+      </aside>
+
+      <section class="workspace">
+        <section class="insight-strip" aria-label="Algorithm state summary">
+          <article>
+            <span>Category</span>
+            <strong id="metricCategory">-</strong>
+          </article>
+          <article>
+            <span>Steps</span>
+            <strong id="metricSteps">0</strong>
+          </article>
+          <article>
+            <span>Input Size</span>
+            <strong id="metricInputSize">0</strong>
+          </article>
+          <article>
+            <span>State</span>
+            <strong id="metricState">Idle</strong>
+          </article>
+        </section>
+
+        <div class="control-panel">
+          <div class="input-grid">
+            <label>
+              Input
+              <input id="dataInput" type="text" autocomplete="off">
+            </label>
+            <label>
+              Target / Pattern
+              <input id="targetInput" type="text" autocomplete="off">
+            </label>
+          </div>
+          <div class="button-row">
+            <button id="runButton" type="button">執行</button>
+            <button id="prevButton" type="button">上一步</button>
+            <button id="nextButton" type="button">下一步</button>
+            <button id="playButton" type="button">播放</button>
+            <button id="resetButton" type="button">重設</button>
+          </div>
+          <div id="operationPanel" class="operation-panel" aria-label="Data structure operations">
+            <label>
+              操作
+              <select id="operationSelect"></select>
+            </label>
+            <label>
+              操作值
+              <input id="operationValue" type="text" autocomplete="off" placeholder="例如 42">
+            </label>
+            <button id="applyOperationButton" type="button">套用操作</button>
+            <button id="clearStructureButton" type="button">清空結構</button>
+          </div>
+          <div class="timeline-row">
+            <label>
+              步驟時間軸
+              <input id="stepSlider" type="range" min="0" max="0" value="0">
+            </label>
+            <label>
+              播放速度
+              <select id="speedSelect">
+                <option value="1000">慢速</option>
+                <option value="650" selected>標準</option>
+                <option value="320">快速</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="visual-layout">
+          <section class="visual-stage" aria-label="Visualization">
+            <div class="stage-header">
+              <span id="stageMode">Visualization</span>
+              <span id="stageHint">Use Next/Prev or Play to inspect state transitions.</span>
+            </div>
+            <svg id="svgCanvas" role="img" aria-label="Algorithm visualization"></svg>
+            <div id="tableCanvas" class="table-canvas"></div>
+          </section>
+          <section class="side-panel" aria-label="Current step details">
+            <h2 id="algorithmTitle">Select an algorithm</h2>
+            <p id="algorithmDescription"></p>
+            <div id="qualityBar" class="quality-bar"></div>
+            <div class="progress-shell" aria-label="Step progress">
+              <div id="progressBar" class="progress-bar"></div>
+            </div>
+            <pre id="stepText"></pre>
+            <div id="legend" class="legend"></div>
+            <section class="code-panel" aria-label="Pseudocode">
+              <h3>Pseudocode</h3>
+              <ol id="pseudoCode"></ol>
+            </section>
+            <section class="event-panel" aria-label="Step event log">
+              <h3>Step Log</h3>
+              <ol id="stepLog"></ol>
+            </section>
+            <details class="usage-card" open>
+              <summary>使用說明</summary>
+              <ol>
+                <li>從左側選擇分類與演算法。</li>
+                <li>修改 Input 與 Target / Pattern，按 Run 重新產生步驟。</li>
+                <li>RBT、Fibonacci Heap、BST、AVL、Trie 請使用操作面板逐步 Insert / Delete / Extract-Min。</li>
+                <li>用 Next / Prev 逐步檢查，或按 Play 自動播放。</li>
+                <li>拖曳 Step timeline 可快速跳到任一步。</li>
+                <li>圖論輸入格式：<code>0-1:4,0-2:1</code>；未填權重時預設為 1。</li>
+                <li>若 localhost 無法連線，可直接用一般瀏覽器開啟本資料夾的 <code>index.html</code>。</li>
+              </ol>
+            </details>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
