@@ -1,5 +1,43 @@
 # Data Structures and Algorithms
 
+## Project Layout
+
+The repository is organized around four top-level learning tracks. Keep new work
+inside these folders instead of adding new root-level directories.
+
+Interactive visualizations live in `DSA_Visual_Forge/`. This is the only
+root-level project folder and is intentionally separated from the C++ practice
+tracks because it is a browser application.
+
+- `Basic Programming Problems/`
+  - `00_Legacy_Practice/`
+  - `01_Introduction/`
+- `Data structure Application Problems/`
+  - `00_Overview/`
+  - `01_Arrays/`
+  - `02_Linked_Lists/`
+  - `03_Stacks/`
+  - `04_Queues/`
+  - `05_Trees/`
+  - `06_Graphs/`
+  - `07_Hash_Tables/`
+- `Algorithm Application Problems/`
+  - `00_Overview/`
+  - `01_Sorting/`
+  - `02_Searching/`
+  - `03_Graph_Algorithms/`
+  - `04_Minimum_Spanning_Tree/`
+  - `05_Other_Algorithms/`
+- `Advanced Programming Problems/`
+  - `01_Shortest_Path/`
+  - `02_Dynamic_Programming/`
+  - `03_Randomized_Algorithms/`
+  - `04_String_Algorithms/`
+
+Each data structure or algorithm topic has its own standalone C++17 `.cpp` file.
+Red-black tree implementations are under
+`Data structure Application Problems/05_Trees/`.
+
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Data Structures](#data-structures)
