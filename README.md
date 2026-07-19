@@ -1,5 +1,11 @@
 # Data Structures and Algorithms
-
+<p align="center">
+  <img
+    src="./data-structures-algorithms.png"
+    alt="data-structures-algorithms"
+    width="100%"
+  />
+</p>
 ## Project Layout
 
 The repository is organized around four top-level learning tracks. Keep new work
